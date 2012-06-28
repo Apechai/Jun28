@@ -67,11 +67,11 @@
 
 - (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event {
 	if (touches.count > 0) {
-
-        CGFloat delta_x = ship.center.x;
-        CGFloat delta_y = ship.center.y;
+        CGPoint destination = [[touches anyObject] locationInView: self];
+        CGFloat delta_x = destination.x - ship.center.x;
+        CGFloat delta_y = destination.y - ship.center.y;
         
-        CGFloat directiontouched = atan2(delta_x, delta_y);
+        CGFloat directiontouched = atan2(delta_x, -delta_y);
 		[UIView animateWithDuration: 2.0
                               delay: 0.1
                             options: 	UIViewAnimationOptionCurveEaseInOut
@@ -82,7 +82,6 @@
                              [UIView setAnimationRepeatCount: 1];
                              ship.center = [[touches anyObject] locationInView: self];
                              ship.transform = CGAffineTransformMakeRotation(directiontouched);
-                             
                          }
                          completion: NULL
          ];
