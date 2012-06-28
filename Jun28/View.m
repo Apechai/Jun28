@@ -18,6 +18,46 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor blackColor];
+        fueltank = 100;
+        NSString *string = [NSString stringWithFormat:
+                            @"Fuel %d",
+                            fueltank];
+        UIFont *font = [UIFont systemFontOfSize: 14.0 ];
+        CGSize size = [string sizeWithFont: font];
+        CGRect z = CGRectMake(
+                              self.bounds.origin.x,
+                              self.bounds.origin.y,
+                              size.width,
+                              size.height
+                              );
+        
+		fuel = [[UILabel alloc] initWithFrame: z];
+		fuel.backgroundColor = [UIColor clearColor];
+        fuel.textColor = [UIColor greenColor];
+		fuel.font = font;
+		fuel.text = string;
+		[self addSubview: fuel];
+        
+        NSString *targetstring = [NSString stringWithFormat: 
+                                  @"Target Coordinates: %g, %g",
+                                  self.bounds.size.width/2, 
+                                  self.bounds.size.height/2] ;
+        UIFont *targetfont = [UIFont systemFontOfSize: 14.0 ];
+        CGSize targetsize = [targetstring sizeWithFont: targetfont];
+        CGRect n = CGRectMake(
+                              self.bounds.origin.x,
+                              self.bounds.origin.y + 20,
+                              targetsize.width + 20,
+                              targetsize.height
+                              );
+        
+		target = [[UILabel alloc] initWithFrame: n];
+		target.backgroundColor = [UIColor clearColor];
+        target.textColor = [UIColor greenColor];
+		target.font = targetfont;
+		target.text = targetstring;
+		[self addSubview: target];
+        
         asteroidcolor = YES;
         
         CGRect f = CGRectMake(0, 0, 60, 60);
@@ -69,6 +109,8 @@
 
 - (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event {
 	if (touches.count > 0) {
+        
+        fueltank = fueltank - 1;
         CGPoint destination = [[touches anyObject] locationInView: self];
         CGFloat delta_x = destination.x - ship.center.x;
         CGFloat delta_y = destination.y - ship.center.y;
@@ -84,6 +126,12 @@
                              [UIView setAnimationRepeatCount: 1];
                              ship.center = [[touches anyObject] locationInView: self];
                              ship.transform = CGAffineTransformMakeRotation(directiontouched);
+                             target.text = [NSString stringWithFormat:
+                                          @"Target coordinates: (%g, %g)",
+                                          destination.x, destination.y];
+                             fuel.text = [NSString stringWithFormat:
+                                          @"Fuel %d",
+                                          fueltank];
                          }
                          completion: NULL
          ];

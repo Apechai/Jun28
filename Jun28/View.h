@@ -14,6 +14,9 @@
     Asteroid *asteroid;
     Ship *ship;
     BOOL asteroidcolor;
+    UILabel *fuel;
+    UILabel *target;
+    int fueltank;
 }
 
 -(void)animateAsteroid;
