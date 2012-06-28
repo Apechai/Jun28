@@ -13,6 +13,7 @@
 @interface View : UIView {
     Asteroid *asteroid;
     Ship *ship;
+    BOOL asteroidcolor;
 }
 
 -(void)animateAsteroid;

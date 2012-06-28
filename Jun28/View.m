@@ -18,6 +18,7 @@
     if (self) {
         // Initialization code
         self.backgroundColor = [UIColor blackColor];
+        asteroidcolor = YES;
         
         CGRect f = CGRectMake(0, 0, 60, 60);
         CGRect s = CGRectMake(self.bounds.size.width/2, self.bounds.size.height/2, 30, 30);
@@ -44,7 +45,7 @@
 
 //move asteroid randomly across screen and rotating
 - (void)animateAsteroid {
-    
+    asteroidcolor = !asteroidcolor;
     [UIView animateWithDuration: 3
                           delay: 0
                         options: 	UIViewAnimationOptionCurveEaseInOut
@@ -55,6 +56,7 @@
                                                        arc4random() % (unsigned int)self.bounds.size.height);;
                          
                          asteroid.transform = CGAffineTransformRotate(asteroid.transform, arc4random());;
+                         asteroid.backgroundColor = asteroidcolor ? [UIColor blackColor] : [UIColor redColor];
                          
                      }
                      completion: ^(BOOL finished){
