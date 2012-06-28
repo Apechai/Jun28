@@ -17,6 +17,7 @@
 		AB99087C159CCF2400B62289 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB99087B159CCF2400B62289 /* AVFoundation.framework */; };
 		AB99087E159CD03A00B62289 /* yehat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB99087D159CD03A00B62289 /* yehat.mp3 */; };
 		AB990880159CD4FF00B62289 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB99087F159CD4FF00B62289 /* Icon.png */; };
+		AB990888159CF41E00B62289 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AB990887159CF41D00B62289 /* Default.png */; };
 		ABEE9C36159CB8D100709A0A /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEE9C35159CB8D100709A0A /* Asteroid.m */; };
 		ABEE9C3A159CB97600709A0A /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEE9C39159CB97600709A0A /* Ship.m */; };
 /* End PBXBuildFile section */
@@ -37,6 +38,7 @@
 		AB99087B159CCF2400B62289 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		AB99087D159CD03A00B62289 /* yehat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = yehat.mp3; path = ../../../iOS/Jun28/Jun28/yehat.mp3; sourceTree = "<group>"; };
 		AB99087F159CD4FF00B62289 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../../iOS/Jun28/Jun28/Icon.png; sourceTree = "<group>"; };
+		AB990887159CF41D00B62289 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../../iOS/Jun28/Jun28/Default.png; sourceTree = "<group>"; };
 		ABEE9C34159CB8D100709A0A /* Asteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asteroid.h; sourceTree = "<group>"; };
 		ABEE9C35159CB8D100709A0A /* Asteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Asteroid.m; sourceTree = "<group>"; };
 		ABEE9C38159CB97600709A0A /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		AB5933A7159C0EB100A585AD /* Jun28 */ = {
 			isa = PBXGroup;
 			children = (
+				AB990887159CF41D00B62289 /* Default.png */,
 				AB99087F159CD4FF00B62289 /* Icon.png */,
 				AB99087D159CD03A00B62289 /* yehat.mp3 */,
 				AB5933B0159C0EB100A585AD /* Jun28AppDelegate.h */,
@@ -169,6 +172,7 @@
 				AB5933AC159C0EB100A585AD /* InfoPlist.strings in Resources */,
 				AB99087E159CD03A00B62289 /* yehat.mp3 in Resources */,
 				AB990880159CD4FF00B62289 /* Icon.png in Resources */,
+				AB990888159CF41E00B62289 /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
