@@ -14,6 +14,9 @@
 		AB5933AE159C0EB100A585AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5933AD159C0EB100A585AD /* main.m */; };
 		AB5933B2159C0EB100A585AD /* Jun28AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5933B1159C0EB100A585AD /* Jun28AppDelegate.m */; };
 		AB5933BA159C0EFE00A585AD /* View.m in Sources */ = {isa = PBXBuildFile; fileRef = AB5933B9159C0EFE00A585AD /* View.m */; };
+		AB99087C159CCF2400B62289 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB99087B159CCF2400B62289 /* AVFoundation.framework */; };
+		AB99087E159CD03A00B62289 /* yehat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AB99087D159CD03A00B62289 /* yehat.mp3 */; };
+		AB990880159CD4FF00B62289 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB99087F159CD4FF00B62289 /* Icon.png */; };
 		ABEE9C36159CB8D100709A0A /* Asteroid.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEE9C35159CB8D100709A0A /* Asteroid.m */; };
 		ABEE9C3A159CB97600709A0A /* Ship.m in Sources */ = {isa = PBXBuildFile; fileRef = ABEE9C39159CB97600709A0A /* Ship.m */; };
 /* End PBXBuildFile section */
@@ -31,6 +34,9 @@
 		AB5933B1159C0EB100A585AD /* Jun28AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Jun28AppDelegate.m; sourceTree = "<group>"; };
 		AB5933B8159C0EFE00A585AD /* View.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = View.h; sourceTree = "<group>"; };
 		AB5933B9159C0EFE00A585AD /* View.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = View.m; sourceTree = "<group>"; };
+		AB99087B159CCF2400B62289 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		AB99087D159CD03A00B62289 /* yehat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = yehat.mp3; path = ../../../iOS/Jun28/Jun28/yehat.mp3; sourceTree = "<group>"; };
+		AB99087F159CD4FF00B62289 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../../../iOS/Jun28/Jun28/Icon.png; sourceTree = "<group>"; };
 		ABEE9C34159CB8D100709A0A /* Asteroid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asteroid.h; sourceTree = "<group>"; };
 		ABEE9C35159CB8D100709A0A /* Asteroid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Asteroid.m; sourceTree = "<group>"; };
 		ABEE9C38159CB97600709A0A /* Ship.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ship.h; sourceTree = "<group>"; };
@@ -42,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB99087C159CCF2400B62289 /* AVFoundation.framework in Frameworks */,
 				AB5933A2159C0EB100A585AD /* UIKit.framework in Frameworks */,
 				AB5933A4159C0EB100A585AD /* Foundation.framework in Frameworks */,
 				AB5933A6159C0EB100A585AD /* CoreGraphics.framework in Frameworks */,
@@ -71,6 +78,7 @@
 		AB5933A0159C0EB100A585AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AB99087B159CCF2400B62289 /* AVFoundation.framework */,
 				AB5933A1159C0EB100A585AD /* UIKit.framework */,
 				AB5933A3159C0EB100A585AD /* Foundation.framework */,
 				AB5933A5159C0EB100A585AD /* CoreGraphics.framework */,
@@ -81,6 +89,8 @@
 		AB5933A7159C0EB100A585AD /* Jun28 */ = {
 			isa = PBXGroup;
 			children = (
+				AB99087F159CD4FF00B62289 /* Icon.png */,
+				AB99087D159CD03A00B62289 /* yehat.mp3 */,
 				AB5933B0159C0EB100A585AD /* Jun28AppDelegate.h */,
 				AB5933B1159C0EB100A585AD /* Jun28AppDelegate.m */,
 				ABEE9C34159CB8D100709A0A /* Asteroid.h */,
@@ -134,7 +144,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Goldman Sachs";
 			};
-			buildConfigurationList = AB593397159C0EAF00A585AD /* Build configuration list for PBXProject "Jun28" */;
+			buildConfigurationList = AB593397159C0EAF00A585AD /* Build configuration list for PBXProject "jun28" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -157,6 +167,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB5933AC159C0EB100A585AD /* InfoPlist.strings in Resources */,
+				AB99087E159CD03A00B62289 /* yehat.mp3 in Resources */,
+				AB990880159CD4FF00B62289 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +271,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AB593397159C0EAF00A585AD /* Build configuration list for PBXProject "Jun28" */ = {
+		AB593397159C0EAF00A585AD /* Build configuration list for PBXProject "jun28" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB5933B3159C0EB100A585AD /* Debug */,

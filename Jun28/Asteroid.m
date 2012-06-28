@@ -3,7 +3,7 @@
 //  Jun28
 //
 //  Created by Matthew Fong on 6/28/12.
-//  Copyright (c) 2012 Goldman Sachs. All rights reserved.
+//  Copyright (c) 2012. All rights reserved.
 //
 
 #import "Asteroid.h"
@@ -27,14 +27,15 @@
     return self;
 }
 
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void) drawRect: (CGRect) rect
+ {
+ // Drawing code
+ 
+ }
+ */
 
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void) drawRect: (CGRect) rect
-{
-    // Drawing code
-    UIFont *font = [UIFont systemFontOfSize: 20];
-    [@"Hello!" drawAtPoint: CGPointZero withFont: font];
-}
 
 @end

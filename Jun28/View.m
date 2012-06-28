@@ -3,7 +3,7 @@
 //  Jun28
 //
 //  Created by Matthew Fong on 6/28/12.
-//  Copyright (c) 2012 Goldman Sachs. All rights reserved.
+//  Copyright (c) 2012. All rights reserved.
 //
 #import "View.h"
 #import "Asteroid.h"
@@ -20,34 +20,14 @@
         self.backgroundColor = [UIColor blackColor];
         
         CGRect f = CGRectMake(0, 0, 60, 60);
+        CGRect s = CGRectMake(self.bounds.size.width/2, self.bounds.size.height/2, 30, 30);
         asteroid = [[Asteroid alloc] initWithFrame: f];
-        
-        CGRect s = CGRectMake(160,230, 20, 20);
-        ship = [[Ship alloc] initWithFrame: s];
         [self addSubview: asteroid];
+        ship = [[Ship alloc] initWithFrame:s];
         [self addSubview: ship];
-        
     }
     return self;
 }
-
-- (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event {
-    if (touches.count > 0) {
-        
-		[UIView animateWithDuration: 1.0
-                              delay: 0.0
-                            options: UIViewAnimationOptionCurveEaseInOut
-                         animations: ^{
-                             //This block describes what the animation should do.
-                             ship.center = [[touches anyObject] locationInView: self];
-                             ship.transform = CGAffineTransformMakeRotation(90 * M_PI / 100);
-                         }
-                         completion: NULL
-         ];
-}
-}
-
-
 
 
 // Only override drawRect: if you perform custom drawing.
@@ -59,28 +39,57 @@
                                   arc4random() % (unsigned int)self.bounds.size.width, 
                                   arc4random() % (unsigned int)self.bounds.size.height);
     
+    [self animateAsteroid];
+}
+
+//move asteroid randomly across screen and rotating
+- (void)animateAsteroid {
     
-    CGPoint destination = CGPointMake(
-                                      arc4random() % (unsigned int)self.bounds.size.width, 
-                                      arc4random() % (unsigned int)self.bounds.size.height);
-    
-    // animate to random destination
-    [UIView animateWithDuration: 20
+    [UIView animateWithDuration: 3
                           delay: 0
                         options: 	UIViewAnimationOptionCurveEaseInOut
                      animations: ^{
-                         //Animate this indefinitely
-                         [UIView setAnimationRepeatCount: 0];
-                         asteroid.center = destination;
+                         [UIView setAnimationRepeatCount: 1];
+                         asteroid.center = CGPointMake(
+                                                       arc4random() % (unsigned int)self.bounds.size.width, 
+                                                       arc4random() % (unsigned int)self.bounds.size.height);;
                          
-                         asteroid.transform = CGAffineTransformMakeRotation(90 * M_PI / 180);
+                         asteroid.transform = CGAffineTransformRotate(asteroid.transform, arc4random());;
                          
                      }
                      completion: ^(BOOL finished){
+                         [self animateAsteroid];
                      }
      ];
-    
 }
+
+// move ship according to touch
+
+- (void) touchesBegan: (NSSet *) touches withEvent: (UIEvent *) event {
+	if (touches.count > 0) {
+
+        CGFloat delta_x = ship.center.x;
+        CGFloat delta_y = ship.center.y;
+        
+        CGFloat directiontouched = atan2(delta_x, delta_y);
+		[UIView animateWithDuration: 2.0
+                              delay: 0.1
+                            options: 	UIViewAnimationOptionCurveEaseInOut
+         | UIViewAnimationOptionAllowUserInteraction
+         | UIViewAnimationOptionBeginFromCurrentState
+                         animations: ^{
+                             //This block describes what the animation should do.
+                             [UIView setAnimationRepeatCount: 1];
+                             ship.center = [[touches anyObject] locationInView: self];
+                             ship.transform = CGAffineTransformMakeRotation(directiontouched);
+                             
+                         }
+                         completion: NULL
+         ];
+	}
+}
+
+
 
 
 @end
